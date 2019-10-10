@@ -48,7 +48,7 @@ def make_melon_types():
     crenshaw.add_pairing(['proscuitto'])
     all_melon_types.append(crenshaw)
 
-    yellow_watermelon = MelonType('yw', 2013, 'yellow', False, True)
+    yellow_watermelon = MelonType('yw', 2013, 'yellow', False, True, 'Yellow Watermelon')
     yellow_watermelon.add_pairing(['ice cream'])
     all_melon_types.append(yellow_watermelon)
 
@@ -58,7 +58,12 @@ def make_melon_types():
 def print_pairing_info(melon_types):
     """Prints information about each melon type's pairings."""
 
-    # Fill in the rest
+    for melon in melon_types: 
+        print(f'{melon.name} pairs with {melon.pairings}')
+
+
+melon_types_lst = make_melon_types()
+# print_pairing_info(melon_types_lst)
 
 def make_melon_type_lookup(melon_types):
     """Takes a list of MelonTypes and returns a dictionary of melon type by code."""
