@@ -18,6 +18,9 @@ class MelonType(object):
         self.is_bestseller = is_bestseller
         self.name = name
 
+    def __repr__(self):
+        return f'<MelonType code={self.code}>'
+
     def add_pairing(self, pairing):
         """Add a food pairing to the instance's pairings list."""
 
@@ -62,7 +65,8 @@ def print_pairing_info(melon_types):
         print(f'{melon.name} pairs with {melon.pairings}')  
 
 melon_types_lst = make_melon_types()
-# print_pairing_info(melon_types_lst)
+print_pairing_info(melon_types_lst)
+
 
 def make_melon_type_lookup(melon_types):
     """Takes a list of MelonTypes and returns a dictionary of melon type by code."""
@@ -73,8 +77,11 @@ def make_melon_type_lookup(melon_types):
         melon_dict[melon.code] = melon_dict.get(melon.code, melon)
 
     return melon_dict
-    # Fill in the rest
-print(make_melon_type_lookup(melon_types_lst))
+
+# print(make_melon_type_lookup(melon_types_lst))
+
+
+
 ############
 # Part 2   #
 ############
